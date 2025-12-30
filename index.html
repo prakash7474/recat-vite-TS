@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/work_chart_logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Tracker</title>
+  </head>
+  <body>
+    <div class="background">
+      <svg width="100%" height="100%" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+
+        <defs>
+          <!-- Background Gradient -->
+          <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0b0b0b"></stop>
+            <stop offset="100%" stop-color="#141414"></stop>
+          </linearGradient>
+
+          <!-- Glow -->
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="70" result="blur"></feGaussianBlur>
+            <feMerge>
+              <feMergeNode in="blur"></feMergeNode>
+              <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+          </filter>
+        </defs>
+
+        <rect width="1440" height="900" fill="url(#bg)"></rect>
+
+        <circle cx="300" cy="220" r="200" fill="#FFD84D" opacity="0.25" filter="url(#glow)">
+          <animate attributeName="cy" from="200" to="260" dur="10s" repeatCount="indefinite" direction="alternate"></animate>
+        </circle>
+
+        <circle cx="1150" cy="350" r="240" fill="#6EDCFF" opacity="0.25" filter="url(#glow)">
+          <animate attributeName="cx" from="1100" to="1200" dur="12s" repeatCount="indefinite" direction="alternate"></animate>
+        </circle>
+
+        <circle cx="720" cy="760" r="280" fill="#FF8FD8" opacity="0.22" filter="url(#glow)">
+          <animate attributeName="cy" from="730" to="800" dur="14s" repeatCount="indefinite" direction="alternate"></animate>
+        </circle>
+
+      </svg>
+    </div>
+    <div id="app"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
